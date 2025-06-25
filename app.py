@@ -418,15 +418,10 @@ with st.container():
     languages = [
         "English", "हिंदी", "ಕನ್ನಡ", "தமிழ்", "తెలుగు", "বাংলা", "मराठी", "ગુજરાતી", "ਪੰਜਾਬੀ", "भोजपुरी", "Other Languages"
     ]
-    selected_lang = st.selectbox("Select Language", languages)
+    selected_lang = st.selectbox("Available Languages", languages)
     if selected_lang == "English":
         st.write(f"Switching to {selected_lang} (Placeholder for language change functionality.)")
     
-    # Voice mode announcement
-    st.markdown(
-        '<div class="welcome-sub"><em>🔊 Voice & regional support launching soon!</em></div>',
-        unsafe_allow_html=True
-    )
     
     st.markdown('</div>', unsafe_allow_html=True)   
 
