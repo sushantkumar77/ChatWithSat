@@ -418,7 +418,7 @@ with st.container():
     languages = [
         "English", "हिंदी", "ಕನ್ನಡ", "தமிழ்", "తెలుగు", "বাংলা", "मराठी", "ગુજરાતી", "ਪੰਜਾਬੀ"
     ]
-    # selected_lang = st.selectbox("Available Languages", languages)
+    selected_lang = st.selectbox("Available Languages", languages)
     if selected_lang == "English":
         st.write(f"Switching to {selected_lang} (Placeholder for language change functionality.)")
     
