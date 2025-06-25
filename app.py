@@ -372,8 +372,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
-
 # Welcome box content
 st.markdown(
     '<div class="welcome-box"><div class="welcome-title">🌾 Welcome to Satyukt Analytics Virtual Assistant</div></div>',
@@ -424,7 +422,6 @@ with st.container():
     
     
     st.markdown('</div>', unsafe_allow_html=True)   
-
 
 
 
