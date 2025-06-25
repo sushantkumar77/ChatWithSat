@@ -409,16 +409,16 @@ with st.container():
     # Serving section
     with st.expander("🌍 Who We Serve"):
         st.markdown(
-            '<div class="welcome-sub">Farmers, FPOs, Agri-banks, Insurers & Governments</div>',
+            '<div class="welcome-sub">Farmers, Agri-banks, Insurers & Governments</div>',
             unsafe_allow_html=True
         )
     
     # Language selection
     st.markdown('<div class="welcome-sub"><strong>Now available in 30+ Languages</strong></div>', unsafe_allow_html=True)
     languages = [
-        "English", "हिंदी", "ಕನ್ನಡ", "தமிழ்", "తెలుగు", "বাংলা", "मराठी", "ગુજરાતી", "ਪੰਜਾਬੀ", "भोजपुरी", "Other Languages"
+        "English", "हिंदी", "ಕನ್ನಡ", "தமிழ்", "తెలుగు", "বাংলা", "मराठी", "ગુજરાતી", "ਪੰਜਾਬੀ"
     ]
-    selected_lang = st.selectbox("Available Languages", languages)
+    # selected_lang = st.selectbox("Available Languages", languages)
     if selected_lang == "English":
         st.write(f"Switching to {selected_lang} (Placeholder for language change functionality.)")
     
