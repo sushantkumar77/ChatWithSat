@@ -332,23 +332,47 @@ groq_api_key = "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"
 
 st.markdown(
     """
-    <h2 style='text-align: center;'>🌾 Welcome to Satyukt Analytics Virtual Assistant</h2>
-    <p style='text-align: center; font-size: 16px;'>
-        Empowering Agriculture with Satellite Intelligence & AI 🚀<br><br>
-        
-        I'm your smart assistant, here to help you explore how Satyukt can support your farming, finance, insurance, or agri-business needs.<br><br>
+    <style>
+    .welcome-box {
+        background-color: #f0f9ff;
+        border-radius: 15px;
+        padding: 25px;
+        margin-top: 20px;
+        border: 1px solid #d1eaff;
+        box-shadow: 0 0 8px rgba(0, 136, 255, 0.2);
+        font-family: 'Segoe UI', sans-serif;
+    }
+    .welcome-title {
+        color: #007acc;
+        font-size: 26px;
+        font-weight: 600;
+    }
+    .welcome-sub {
+        font-size: 17px;
+        line-height: 1.6;
+        margin-top: 10px;
+    }
+    </style>
 
-        💼 <strong>Ask me about:</strong><br>
-        Sat2Farm, Sat2Credit, Sat2Farm<br>
-        Crop monitoring • Weather advisory • Credit & risk analytics • Agri-insurance claims • Custom solutions<br><br>
+    <div class="welcome-box" style="text-align: center;">
+        <div class="welcome-title">🌾 Welcome to Satyukt Analytics Virtual Assistant</div>
+        <div class="welcome-sub">
+            Empowering Agriculture with Satellite Intelligence & AI 🚀<br><br>
 
-        🌍 <strong>Precision Agriculture for Everyone:</strong><br>
-        From individual farmers to banks, insurers, FPOs & governments — we’ve got you covered.<br><br>
+            🤖 I’m your smart assistant — ready to help with <strong>crop monitoring</strong>, 
+            <strong>insurance claims</strong>, <strong>risk analytics</strong>, and more.<br><br>
 
-        🔊 <em>Multilingual & Voice-enabled support coming soon!</em><br>
-        🌐 <strong>Available in 30+ Languages</strong><br>
-         English •Hindi • Kannada • Tamil • Telugu • Bengali • Marathi • Gujarati • Punjabi • Bhojpuri • and more!
-    </p>
+            💼 <strong>Ask me about:</strong><br>
+            Sat2Farm • Sat2Credit • Sat2Insurance • Sat2Index<br><br>
+
+            🌍 <strong>Serving:</strong> Farmers, FPOs, Agri-banks, Insurers & Governments<br><br>
+
+            🌐 <strong>Now available in 30+ Languages</strong><br>
+            English • हिंदी • ಕನ್ನಡ • தமிழ் • తెలుగు • বাংলা • मराठी • ગુજરાતી • ਪੰਜਾਬੀ • भोजपुरी • and more<br><br>
+
+            🔊 <em>Voice & regional support launching soon!</em>
+        </div>
+    </div>
     """,
     unsafe_allow_html=True
 )
