@@ -468,11 +468,11 @@ if "vector_store" in st.session_state:
                 answer = response['answer']
 
                 if is_out_of_context(answer):
-                    answer = "I'm sorry, the answer is not available in the provided document."
+                    answer = "Let me connect you with the right team for this! Drop a message to support@satyukt.com — they’ll take it from here. 🙌"
 
                 st.session_state.chat_history.append({"role": "assistant", "content": answer})
                 st.experimental_rerun()
         else:
             st.error("Please enter a question.")
 else:
-    st.info("Waiting for PDF to load...")
+    st.info("Waiting for Our Virtual Assistant...")
