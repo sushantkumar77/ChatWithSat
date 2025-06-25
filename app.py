@@ -392,7 +392,7 @@ def extract_text_with_pdfplumber(pdf_path):
 def initialize_vector_db(pdf_file):
     if "vector_store" not in st.session_state:
         try:
-            with st.spinner("Reading and processing PDF..."):
+            with st.spinner("Hang tight! We’re connecting you to our Virtual Assistant"):
                 with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as temp_file:
                     temp_file.write(pdf_file.read())
                     pdf_path = temp_file.name
@@ -419,7 +419,7 @@ def initialize_vector_db(pdf_file):
 
                 os.unlink(pdf_path)
 
-            st.success("PDF has been successfully loaded!")
+            # st.success("PDF has been successfully loaded!")
             return True
 
         except Exception as e:
@@ -431,7 +431,7 @@ def initialize_vector_db(pdf_file):
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
-# ✅ Auto-load PDF from same folder instead of asking for upload
+# Auto-load PDF from same folder instead of asking for upload
 default_pdf_path = "SatyuktQueries.pdf"  # Change this filename to your actual PDF
 if os.path.exists(default_pdf_path):
     class DummyFile:
@@ -441,7 +441,7 @@ if os.path.exists(default_pdf_path):
     pdf_input_from_user = DummyFile()
 
     if initialize_vector_db(pdf_input_from_user):
-        st.success(f"'{default_pdf_path}' loaded successfully! You can now start chatting.")
+        st.success(f"'{default_pdf_path}'Hi Let Me Know How Can I Help You Today! You can now start chatting.")
 else:
     st.error(f"PDF file '{default_pdf_path}' not found in the project directory.")
 
@@ -453,7 +453,7 @@ if "vector_store" in st.session_state:
         st.write(f"{role} {msg['content']}")
         st.write("---")
 
-    user_prompt = st.text_input("Enter your question in any language:")
+    user_prompt = st.text_input("Enter your question in your language:")
 
     if st.button("Send Message"):
         if user_prompt:
