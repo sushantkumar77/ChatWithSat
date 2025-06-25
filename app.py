@@ -441,7 +441,7 @@ if os.path.exists(default_pdf_path):
     pdf_input_from_user = DummyFile()
 
     if initialize_vector_db(pdf_input_from_user):
-        st.success("Hi, Let Me Know How Can I Help You Today! You can now start chatting...")
+        st.success("Hi there! 👋 How can I assist you today? Feel free to ask me anything — I’m here to help You!")
 else:
     st.error(f"PDF file '{default_pdf_path}' not found in the project directory.")
 
