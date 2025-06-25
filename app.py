@@ -332,44 +332,6 @@ groq_api_key = "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"
 
 import streamlit as st
 
-# Custom CSS for styling
-st.markdown(
-    """
-    <style>
-    .welcome-box {
-        background-color: #f0f9ff;
-        border-radius: 15px;
-        padding: 25px;
-        margin-top: 20px;
-        border: 1px solid #d1eaff;
-        box-shadow: 0 0 8px rgba(0, 136, 255, 0.2);
-        font-family: 'Segoe UI', sans-serif;
-        text-align: center;
-    }
-    .welcome-title {
-        color: #007acc;
-        font-size: 26px;
-        font-weight: 600;
-    }
-    .welcome-sub {
-        font-size: 17px;
-        line-height: 1.6;
-        margin-top: 10px;
-    }
-    .stButton>button {
-        background-color: #007acc;
-        color: white;
-        border-radius: 8px;
-        padding: 8px 16px;
-        margin: 5px;
-    }
-    .stButton>button:hover {
-        background-color: #005f99;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
 # Welcome box content
 st.markdown(
@@ -394,38 +356,6 @@ with st.container():
         unsafe_allow_html=True
     )
     
-    # Services section with buttons
-    st.markdown('<div class="welcome-sub"><strong>Ask me about:</strong></div>', unsafe_allow_html=True)
-    cols = st.columns(4)
-    services = ["Sat2Farm", "Sat2Credit", "Sat2Insurance", "Sat2Index"]
-    for i, service in enumerate(services):
-        with cols[i]:
-            if st.button(service):
-                st.write(f"Learn more about {service}! (This is a placeholder for further interaction.)")
-    
-    # Serving section
-    with st.expander("🌍 Who We Serve"):
-        st.markdown(
-            '<div class="welcome-sub">Farmers, FPOs, Agri-banks, Insurers & Governments</div>',
-            unsafe_allow_html=True
-        )
-    
-    # Language selection
-    st.markdown('<div class="welcome-sub"><strong>Now available in 30+ Languages</strong></div>', unsafe_allow_html=True)
-    languages = [
-        "English", "हिंदी", "ಕನ್ನಡ", "தமிழ்", "తెలుగు", "বাংলা", "मराठी", "ગુજરાતી", "ਪੰਜਾਬੀ", "भोजपुरी", "Other Languages"
-    ]
-    selected_lang = st.selectbox("Select Language", languages)
-    if selected_lang == "English":
-        st.write(f"Switching to {selected_lang} (Placeholder for language change functionality.)")
-    
-    # Voice mode announcement
-    st.markdown(
-        '<div class="welcome-sub"><em>🔊 Voice & regional support launching soon!</em></div>',
-        unsafe_allow_html=True
-    )
-    
-    st.markdown('</div>', unsafe_allow_html=True)
 
 
 prompt = ChatPromptTemplate.from_template(
