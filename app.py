@@ -382,7 +382,7 @@ st.markdown(
 
 # Interactive elements
 with st.container():
-    st.markdown('<div class="welcome-box">', unsafe_allow_html=True)
+    st.markdown('', unsafe_allow_html=True)
     
     # Subtitle
     st.markdown(
