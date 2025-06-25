@@ -1,0 +1,12 @@
+streamlit==1.12.0
+langchain==0.2.7
+langchain_community==0.2.7
+langchain_core==0.2.18
+langchain_groq==0.1.6
+langchain_huggingface==0.0.3
+python-dotenv==1.0.1
+pypdf==4.2.0
+altair==4.2.2
+chromadb==0.4.24
+docarray
+pdfplumber
