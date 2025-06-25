@@ -330,6 +330,9 @@ from dotenv import load_dotenv
 load_dotenv()
 groq_api_key = "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"
 
+import streamlit as st
+
+# Custom CSS for styling
 st.markdown(
     """
     <style>
@@ -341,6 +344,7 @@ st.markdown(
         border: 1px solid #d1eaff;
         box-shadow: 0 0 8px rgba(0, 136, 255, 0.2);
         font-family: 'Segoe UI', sans-serif;
+        text-align: center;
     }
     .welcome-title {
         color: #007acc;
@@ -352,30 +356,76 @@ st.markdown(
         line-height: 1.6;
         margin-top: 10px;
     }
+    .stButton>button {
+        background-color: #007acc;
+        color: white;
+        border-radius: 8px;
+        padding: 8px 16px;
+        margin: 5px;
+    }
+    .stButton>button:hover {
+        background-color: #005f99;
+    }
     </style>
-
-    <div class="welcome-box" style="text-align: center;">
-        <div class="welcome-title">🌾 Welcome to Satyukt Analytics Virtual Assistant</div>
-        <div class="welcome-sub">
-            Empowering Agriculture with Satellite Intelligence & AI 🚀<br><br>
-
-            🤖 I’m your smart assistant — ready to help with <strong>crop monitoring</strong>, 
-            <strong>insurance claims</strong>, <strong>risk analytics</strong>, and more.<br><br>
-
-            💼 <strong>Ask me about:</strong><br>
-            Sat2Farm • Sat2Credit • Sat2Insurance • Sat2Index<br><br>
-
-            🌍 <strong>Serving:</strong> Farmers, FPOs, Agri-banks, Insurers & Governments<br><br>
-
-            🌐 <strong>Now available in 30+ Languages</strong><br>
-            English • हिंदी • ಕನ್ನಡ • தமிழ் • తెలుగు • বাংলা • मराठी • ગુજરાતી • ਪੰਜਾਬੀ • भोजपुरी • and more<br><br>
-
-            🔊 <em>Voice & regional support launching soon!</em>
-        </div>
-    </div>
     """,
     unsafe_allow_html=True
 )
+
+# Welcome box content
+st.markdown(
+    '<div class="welcome-box"><div class="welcome-title">🌾 Welcome to Satyukt Analytics Virtual Assistant</div></div>',
+    unsafe_allow_html=True
+)
+
+# Interactive elements
+with st.container():
+    st.markdown('<div class="welcome-box">', unsafe_allow_html=True)
+    
+    # Subtitle
+    st.markdown(
+        '<div class="welcome-sub">Empowering Agriculture with Satellite Intelligence & AI 🚀</div>',
+        unsafe_allow_html=True
+    )
+    
+    # Assistant description
+    st.markdown(
+        '<div class="welcome-sub">🤖 I’m your smart assistant — ready to help with <strong>crop monitoring</strong>, '
+        '<strong>insurance claims</strong>, <strong>risk analytics</strong>, and more.</div>',
+        unsafe_allow_html=True
+    )
+    
+    # Services section with buttons
+    st.markdown('<div class="welcome-sub"><strong>Ask me about:</strong></div>', unsafe_allow_html=True)
+    cols = st.columns(4)
+    services = ["Sat2Farm", "Sat2Credit", "Sat2Insurance", "Sat2Index"]
+    for i, service in enumerate(services):
+        with cols[i]:
+            if st.button(service):
+                st.write(f"Learn more about {service}! (This is a placeholder for further interaction.)")
+    
+    # Serving section
+    with st.expander("🌍 Who We Serve"):
+        st.markdown(
+            '<div class="welcome-sub">Farmers, FPOs, Agri-banks, Insurers & Governments</div>',
+            unsafe_allow_html=True
+        )
+    
+    # Language selection
+    st.markdown('<div class="welcome-sub"><strong>Now available in 30+ Languages</strong></div>', unsafe_allow_html=True)
+    languages = [
+        "English", "हिंदी", "ಕನ್ನಡ", "தமிழ்", "తెలుగు", "বাংলা", "मराठी", "ગુજરાતી", "ਪੰਜਾਬੀ", "भोजपुरी", "Other Languages"
+    ]
+    selected_lang = st.selectbox("Select Language", languages)
+    if selected_lang == "English":
+        st.write(f"Switching to {selected_lang} (Placeholder for language change functionality.)")
+    
+    # Voice mode announcement
+    st.markdown(
+        '<div class="welcome-sub"><em>🔊 Voice & regional support launching soon!</em></div>',
+        unsafe_allow_html=True
+    )
+    
+    st.markdown('</div>', unsafe_allow_html=True)
 
 
 prompt = ChatPromptTemplate.from_template(
@@ -385,7 +435,7 @@ prompt = ChatPromptTemplate.from_template(
 1. Search the entire context thoroughly before responding.
 2. If the information is found, answer clearly and concisely, using the same language as the question.
 3. If the answer is partially available, explain using what you found and clearly state the limitation.
-4. If the answer is completely missing, reply: "Please contact 6203027188 for further information."
+4. If the answer is completely missing, reply: "Please contact 8043755513 for further information."
 5. Whenever possible, cite or refer to the relevant section or topic in the PDF.
 
 Always maintain a helpful, professional, and respectful tone.
