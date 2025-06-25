@@ -555,15 +555,6 @@
 #     st.info("Waiting for Our Virtual Assistant...")
 
 
-
-
-
-
-
-
-
-
-
 import streamlit as st
 import os
 import tempfile
@@ -583,19 +574,86 @@ groq_api_key = "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"
 
 st.markdown(
     """
-    <h2 style='text-align: center;'>AI QueryBot [Sushant Kumar (VIT Vellore: 21BCI0321)]</h2>
-    <p style='text-align: center; font-size: 16px;'>
-        Upload a PDF, ask questions from it, and get answers in your preferred language.
-        <br><br>
-        🌐 <strong>Supports 30+ Languages</strong>:<br>
-        English, Hindi, Marathi, Tamil, Telugu, Kannada, Punjabi, Gujarati, Bengali, Bhojpuri, Urdu<br>
-        Spanish, French, German, Italian, Portuguese, Dutch, Arabic, Russian, Chinese, Japanese, Korean and more.
-        <br><br>
-        🔊 <em>Voice updates are coming soon. Stay tuned!</em>
-    </p>
+    <style>
+    .welcome-box {
+        background-color: #f0f9ff;
+        border-radius: 15px;
+        padding: 25px;
+        margin-top: 20px;
+        border: 1px solid #d1eaff;
+        box-shadow: 0 0 8px rgba(0, 136, 255, 0.2);
+        font-family: 'Segoe UI', sans-serif;
+        text-align: center;
+    }
+    .welcome-title {
+        color: #007acc;
+        font-size: 26px;
+        font-weight: 600;
+    }
+    .welcome-sub {
+        font-size: 17px;
+        line-height: 1.6;
+        margin-top: 10px;
+    }
+    .stButton>button {
+        background-color: #007acc;
+        color: white;
+        border-radius: 8px;
+        padding: 8px 16px;
+        margin: 5px;
+    }
+    .stButton>button:hover {
+        background-color: #005f99;
+    }
+    </style>
     """,
     unsafe_allow_html=True
 )
+
+# Welcome box content
+st.markdown(
+    '<div class="welcome-box"><div class="welcome-title">🌾 Welcome to Satyukt Analytics Virtual Assistant</div></div>',
+    unsafe_allow_html=True
+)
+
+# Interactive elements
+with st.container():
+    st.markdown('', unsafe_allow_html=True)
+
+    st.markdown(
+        '<div class="welcome-sub">Empowering Agriculture with Satellite Intelligence & AI 🚀</div>',
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        '<div class="welcome-sub">🤖 I’m your smart assistant — ready to help with <strong>crop monitoring</strong>, '
+        '<strong>insurance claims</strong>, <strong>risk analytics</strong>, and more.</div>',
+        unsafe_allow_html=True
+    )
+
+    st.markdown('<div class="welcome-sub"><strong>Ask me about:</strong></div>', unsafe_allow_html=True)
+    cols = st.columns(4)
+    services = ["Sat2Farm", "Sat4Agri", "Sat4Risk", "Sat2Credit"]
+    for i, service in enumerate(services):
+        with cols[i]:
+            if st.button(service):
+                st.write(f"")
+
+    with st.expander("🌍 Who We Serve"):
+        st.markdown(
+            '<div class="welcome-sub">Farmers, Agri-banks, Insurers & Governments</div>',
+            unsafe_allow_html=True
+        )
+
+    st.markdown('<div class="welcome-sub"><strong>Available Languages</strong></div>', unsafe_allow_html=True)
+    languages = [
+        "English", "हिंदी", "ಕನ್ನಡ", "தமிழ்", "తెలుగు", "বাংলা", "मराठी", "ગુજરાતી", "ਪੰਜਾਬੀ"
+    ]
+    selected_lang = st.selectbox("", languages)
+    if selected_lang == "English":
+        st.write(f"Switching to {selected_lang} (Placeholder for language change functionality.)")
+
+    st.markdown('</div>', unsafe_allow_html=True)
 
 prompt = ChatPromptTemplate.from_template(
     """
@@ -604,7 +662,7 @@ prompt = ChatPromptTemplate.from_template(
 1. Search the entire context thoroughly before responding.
 2. If the information is found, answer clearly and concisely, using the same language as the question.
 3. If the answer is partially available, explain using what you found and clearly state the limitation.
-4. If the answer is completely missing, reply: "Please contact 6203027188 for further information."
+4. If the answer is completely missing, reply: "Please contact 8043755513 for further information."
 5. Whenever possible, cite or refer to the relevant section or topic in the PDF.
 
 Always maintain a helpful, professional, and respectful tone.
@@ -635,7 +693,7 @@ def extract_text_with_pdfplumber(pdf_path):
 def initialize_vector_db(pdf_file):
     if "vector_store" not in st.session_state:
         try:
-            with st.spinner("Reading and processing PDF..."):
+            with st.spinner("Hang tight! We’re connecting you to our Virtual Assistant"):
                 with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as temp_file:
                     temp_file.write(pdf_file.read())
                     pdf_path = temp_file.name
@@ -662,7 +720,6 @@ def initialize_vector_db(pdf_file):
 
                 os.unlink(pdf_path)
 
-            st.success("PDF has been successfully loaded!")
             return True
 
         except Exception as e:
@@ -674,7 +731,7 @@ def initialize_vector_db(pdf_file):
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
-# ✅ Auto-load PDF from same folder instead of asking for upload
+# Auto-load PDF from same folder instead of asking for upload
 default_pdf_path = "SatyuktQueries.pdf"  # Change this filename to your actual PDF
 if os.path.exists(default_pdf_path):
     class DummyFile:
@@ -684,7 +741,7 @@ if os.path.exists(default_pdf_path):
     pdf_input_from_user = DummyFile()
 
     if initialize_vector_db(pdf_input_from_user):
-        st.success(f"'{default_pdf_path}' loaded successfully! You can now start chatting.")
+        st.success("Hi there! 👋 How can I assist you today? Feel free to ask me anything About Us — I’m here to help You!")
 else:
     st.error(f"PDF file '{default_pdf_path}' not found in the project directory.")
 
@@ -692,13 +749,13 @@ else:
 if "vector_store" in st.session_state:
     st.subheader("Chat History")
     for msg in st.session_state.chat_history:
-        role = "**You:**" if msg["role"] == "user" else "**Bot:**"
+        role = "**You:**" if msg["role"] == "user" else "**Satyukt:**"
         st.write(f"{role} {msg['content']}")
         st.write("---")
 
-    user_prompt = st.text_input("Enter your question in any language:")
+    user_prompt = st.text_input("Enter your question in your language:")
 
-    if st.button("Send Message"):
+    if st.button("Send"):
         if user_prompt:
             st.session_state.chat_history.append({"role": "user", "content": user_prompt})
 
@@ -711,12 +768,19 @@ if "vector_store" in st.session_state:
                 answer = response['answer']
 
                 if is_out_of_context(answer):
-                    answer = "I'm sorry, the answer is not available in the provided document."
+                    answer = "Let me connect you with the right team for this! Drop a message to support@satyukt.com — they’ll take it from here. 🙌"
 
                 st.session_state.chat_history.append({"role": "assistant", "content": answer})
                 st.experimental_rerun()
         else:
             st.error("Please enter a question.")
 else:
-    st.info("Waiting for PDF to load...")
+    st.info("Waiting for Our Virtual Assistant...")
+
+
+
+
+
+
+
 
