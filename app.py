@@ -329,8 +329,103 @@ from dotenv import load_dotenv
 
 load_dotenv()
 groq_api_key = "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"
-
 import streamlit as st
+
+
+
+# Custom CSS for styling
+# st.markdown(
+#     """
+#     <style>
+#     .welcome-box {
+#         background-color: #f0f9ff;
+#         border-radius: 15px;
+#         padding: 25px;
+#         margin-top: 20px;
+#         border: 1px solid #d1eaff;
+#         box-shadow: 0 0 8px rgba(0, 136, 255, 0.2);
+#         font-family: 'Segoe UI', sans-serif;
+#         text-align: center;
+#     }
+#     .welcome-title {
+#         color: #007acc;
+#         font-size: 26px;
+#         font-weight: 600;
+#     }
+#     # .welcome-sub {
+#     #     font-size: 17px;
+#     #     line-height: 1.6;
+#     #     margin-top: 10px;
+#     # }
+#     .stButton>button {
+#         background-color: #007acc;
+#         color: white;
+#         border-radius: 8px;
+#         padding: 8px 16px;
+#         margin: 5px;
+#     }
+#     .stButton>button:hover {
+#         background-color: #005f99;
+#     }
+#     </style>
+#     """,
+#     unsafe_allow_html=True
+# )
+
+# # Welcome box content
+# st.markdown(
+#     '<div class="welcome-box"><div class="welcome-title">🌾 Welcome to Satyukt Analytics Virtual Assistant</div></div>',
+#     unsafe_allow_html=True
+# )
+
+# # Interactive elements
+# with st.container():
+#     st.markdown('', unsafe_allow_html=True)
+    
+#     # Subtitle
+#     st.markdown(
+#         '<div class="welcome-sub">Empowering Agriculture with Satellite Intelligence & AI 🚀</div>',
+#         unsafe_allow_html=True
+#     )
+    
+#     # Assistant description
+#     st.markdown(
+#         '<div class="welcome-sub">🤖 I’m your smart assistant — ready to help with <strong>crop monitoring</strong>, '
+#         '<strong>insurance claims</strong>, <strong>risk analytics</strong>, and more.</div>',
+#         unsafe_allow_html=True
+#     )
+    
+#     # Services section with buttons
+#     st.markdown('<div class="welcome-sub"><strong>Ask me about:</strong></div>', unsafe_allow_html=True)
+#     cols = st.columns(4)
+#     services = ["Sat2Farm", "Sat4Agri", "Sat4Risk","Sat2Credit"]
+#     for i, service in enumerate(services):
+#         with cols[i]:
+#             if st.button(service):
+#                 st.write(f"")
+    
+#     # Serving section
+#     with st.expander("🌍 Who We Serve"):
+#         st.markdown(
+#             '<div class="welcome-sub">Farmers, Agri-banks, Insurers & Governments</div>',
+#             unsafe_allow_html=True
+#         )
+    
+#     # Language selection
+#     st.markdown('<div class="welcome-sub"><strong>Available Languages</strong></div>', unsafe_allow_html=True)
+#     languages = [
+#         "English", "हिंदी", "ಕನ್ನಡ", "தமிழ்", "తెలుగు", "বাংলা", "मराठी", "ગુજરાતી", "ਪੰਜਾਬੀ"
+#     ]
+#     selected_lang = st.selectbox("", languages)
+#     if selected_lang == "English":
+#         st.write(f"Switching to {selected_lang} (Placeholder for language change functionality.)")
+    
+    
+#     st.markdown('</div>', unsafe_allow_html=True)   
+
+
+
+
 
 
 import streamlit as st
@@ -354,11 +449,6 @@ st.markdown(
         font-size: 26px;
         font-weight: 600;
     }
-    # .welcome-sub {
-    #     font-size: 17px;
-    #     line-height: 1.6;
-    #     margin-top: 10px;
-    # }
     .stButton>button {
         background-color: #007acc;
         color: white;
@@ -369,9 +459,24 @@ st.markdown(
     .stButton>button:hover {
         background-color: #005f99;
     }
+    .logo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+    }
     </style>
     """,
     unsafe_allow_html=True
+)
+
+# Display company logo at the top
+st.image(
+    "https://via.placeholder.com/150x50.png?text=Satyukt+Logo",  # Replace with your actual logo URL or file path
+    width=150,
+    use_column_width=False,
+    output_format="PNG",
+    caption=None
 )
 
 # Welcome box content
@@ -382,7 +487,7 @@ st.markdown(
 
 # Interactive elements
 with st.container():
-    st.markdown('', unsafe_allow_html=True)
+    st.markdown('<div class="welcome-box">', unsafe_allow_html=True)
     
     # Subtitle
     st.markdown(
@@ -400,11 +505,11 @@ with st.container():
     # Services section with buttons
     st.markdown('<div class="welcome-sub"><strong>Ask me about:</strong></div>', unsafe_allow_html=True)
     cols = st.columns(4)
-    services = ["Sat2Farm", "Sat4Agri", "Sat4Risk","Sat2Credit"]
+    services = ["Sat2Farm", "Sat4Agri", "Sat4Risk", "Sat2Credit"]
     for i, service in enumerate(services):
         with cols[i]:
             if st.button(service):
-                st.write(f"")
+                st.write(f"Learn more about {service}! (This is a placeholder for further interaction.)")
     
     # Serving section
     with st.expander("🌍 Who We Serve"):
@@ -419,11 +524,15 @@ with st.container():
         "English", "हिंदी", "ಕನ್ನಡ", "தமிழ்", "తెలుగు", "বাংলা", "मराठी", "ગુજરાતી", "ਪੰਜਾਬੀ"
     ]
     selected_lang = st.selectbox("", languages)
-    if selected_lang == "English":
+    if selected_lang:
         st.write(f"Switching to {selected_lang} (Placeholder for language change functionality.)")
     
-    
-    st.markdown('</div>', unsafe_allow_html=True)   
+    st.markdown('</div>', unsafe_allow_html=True)
+
+
+
+
+
 
 
 prompt = ChatPromptTemplate.from_template(
