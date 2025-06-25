@@ -521,7 +521,7 @@ else:
 if "vector_store" in st.session_state:
     st.subheader("Chat History")
     for msg in st.session_state.chat_history:
-        role = "**You:**" if msg["role"] == "user" else "**Sat:**"
+        role = "**You:**" if msg["role"] == "user" else "**Satyukt:**"
         st.write(f"{role} {msg['content']}")
         st.write("---")
 
