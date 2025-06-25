@@ -372,6 +372,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.image("Sat2FarmUpdated.png", width=200)
+
 # Welcome box content
 st.markdown(
     '<div class="welcome-box"><div class="welcome-title">🌾 Welcome to Satyukt Analytics Virtual Assistant</div></div>',
