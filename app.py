@@ -527,7 +527,7 @@ if "vector_store" in st.session_state:
 
     user_prompt = st.text_input("Enter your question in your language:")
 
-    if st.button("Send Message"):
+    if st.button("Send"):
         if user_prompt:
             st.session_state.chat_history.append({"role": "user", "content": user_prompt})
 
