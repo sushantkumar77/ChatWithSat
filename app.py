@@ -354,11 +354,11 @@ st.markdown(
         font-size: 26px;
         font-weight: 600;
     }
-    .welcome-sub {
-        font-size: 17px;
-        line-height: 1.6;
-        margin-top: 10px;
-    }
+    # .welcome-sub {
+    #     font-size: 17px;
+    #     line-height: 1.6;
+    #     margin-top: 10px;
+    # }
     .stButton>button {
         background-color: #007acc;
         color: white;
@@ -414,11 +414,11 @@ with st.container():
         )
     
     # Language selection
-    st.markdown('<div class="welcome-sub"><strong>Now available in 30+ Languages</strong></div>', unsafe_allow_html=True)
+    st.markdown('<div class="welcome-sub"><strong>Available Languages</strong></div>', unsafe_allow_html=True)
     languages = [
         "English", "हिंदी", "ಕನ್ನಡ", "தமிழ்", "తెలుగు", "বাংলা", "मराठी", "ગુજરાતી", "ਪੰਜਾਬੀ"
     ]
-    selected_lang = st.selectbox("Available Languages", languages)
+    selected_lang = st.selectbox("", languages)
     if selected_lang == "English":
         st.write(f"Switching to {selected_lang} (Placeholder for language change functionality.)")
     
