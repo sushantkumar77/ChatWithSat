@@ -404,7 +404,7 @@ with st.container():
     for i, service in enumerate(services):
         with cols[i]:
             if st.button(service):
-                # st.write(f"Learn more about {service}! (This is a placeholder for further interaction.)")
+                st.write(f"Learn more about {service}! (This is a placeholder for further interaction.)")
     
     # Serving section
     with st.expander("🌍 Who We Serve"):
