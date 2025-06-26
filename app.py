@@ -528,7 +528,7 @@ if "vector_store" in st.session_state:
         st.write(f"{role} {msg['content']}")
         st.write("---")
 
-    user_prompt = st.text_input("Enter your question in your language:")
+    user_prompt = st.text_input("Enter your queries in your preferred language :")
 
     if st.button("Send"):
         if user_prompt:
