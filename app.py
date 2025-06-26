@@ -439,8 +439,8 @@ Instructions:
 2. If the information is found, answer clearly and concisely in the **same language as the question**.
 3. If the answer is partially available, explain using what you found and clearly state the limitation.
 4. If the answer is completely missing, reply in the same language: 
-   "कृपया अधिक जानकारी के लिए 8043755513 पर संपर्क करें।" 
-   (or equivalent translation of "Please contact 8970700045 या 7019992797 for further information.")
+   "कृपया अधिक जानकारी के लिए 8970700045 या 7019992797 पर संपर्क करें।" 
+   (or equivalent translation of "Please contact 8970700045 or 7019992797 for further information.")
 5. Never default to English unless the question is in English.
 6. Whenever possible, cite or refer to the relevant section or topic in the PDF.
 
