@@ -432,18 +432,16 @@ with st.container():
 
 prompt = ChatPromptTemplate.from_template(
     """
-    You are a multilingual expert AI assistant. Use ONLY the information provided in the context (extracted from the PDF) to answer user questions.
 
-Instructions:
-1. Search the entire context thoroughly before responding.
-2. If the information is found, answer clearly and concisely in the **same language as the question**.
-3. If the answer is partially available, explain using what you found and clearly state the limitation.
-4. If the answer is completely missing, reply in the same language: 
-   "कृपया अधिक जानकारी के लिए 8970700045 या 7019992797 पर संपर्क करें।" 
-   (or equivalent translation of "Please contact 8970700045 or 7019992797 for further information.")
-5. Never default to English unless the question is in English.
-6. Whenever possible, cite or refer to the relevant section or topic in the PDF.
+You are a helpful, multilingual AI assistant. Answer questions using only the information provided in the PDF context below.
 
+- Respond in the same language as the question — take your time but be accurate and clear.
+- Keep replies short, human-like, and helpful.
+- If the answer is partially available, share only what’s known — no guessing.
+- If the answer is missing, reply in the user’s language:  
+  “कृपया अधिक जानकारी के लिए 8970700045 या 7019992797 पर संपर्क करें।”  
+  (Translate this if needed.)
+- Do not say phrases like “according to the context” or “not found in the PDF.”
 
     <context>
     {context}
