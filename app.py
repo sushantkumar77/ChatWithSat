@@ -387,7 +387,7 @@ st.markdown(
 
 # Welcome box content
 st.markdown(
-    '<div class="welcome-box"><div class="welcome-title">🌾 Welcome to Satyukt Analytics Virtual Assistant</div></div>',
+    '<div class="welcome-box"><div class="welcome-title">🌾 Welcome to Sat2Farm Virtual Assistant</div></div>',
     unsafe_allow_html=True
 )
 
@@ -522,7 +522,7 @@ else:
 
 # Chat interface
 if "vector_store" in st.session_state:
-    st.subheader("Chat History")
+    st.subheader("Chat With Satyukt")
     for msg in st.session_state.chat_history:
         role = "**You:**" if msg["role"] == "user" else "**Satyukt:**"
         st.write(f"{role} {msg['content']}")
