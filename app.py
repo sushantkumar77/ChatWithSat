@@ -406,7 +406,7 @@ with st.container():
         unsafe_allow_html=True
     )
 
-    st.markdown('<div class="welcome-sub"><strong>Ask me about:</strong></div>', unsafe_allow_html=True)
+    st.markdown('<div class="welcome-sub"><strong></strong></div>', unsafe_allow_html=True)
     # cols = st.columns(4)
     # services = ["Sat2Farm", "Sat4Agri", "Sat4Risk", "Sat2Credit"]
     # for i, service in enumerate(services):
