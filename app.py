@@ -407,12 +407,12 @@ with st.container():
     )
 
     st.markdown('<div class="welcome-sub"><strong>Ask me about:</strong></div>', unsafe_allow_html=True)
-    cols = st.columns(4)
-    services = ["Sat2Farm", "Sat4Agri", "Sat4Risk", "Sat2Credit"]
-    for i, service in enumerate(services):
-        with cols[i]:
-            if st.button(service):
-                st.write(f"")
+    # cols = st.columns(4)
+    # services = ["Sat2Farm", "Sat4Agri", "Sat4Risk", "Sat2Credit"]
+    # for i, service in enumerate(services):
+    #     with cols[i]:
+    #         if st.button(service):
+    #             st.write(f"")
 
     with st.expander("🌍 Who We Serve"):
         st.markdown(
