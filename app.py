@@ -345,6 +345,7 @@ from langchain_core.documents import Document
 from dotenv import load_dotenv
 
 load_dotenv()
+
 groq_api_key = "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"
 
 st.markdown(
