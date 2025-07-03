@@ -346,7 +346,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-groq_api_key = "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"
+groq_api_key = "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"
 
 st.markdown(
     """
